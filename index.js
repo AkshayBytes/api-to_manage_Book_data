@@ -264,7 +264,7 @@ app.delete("/books/:bookId", async(req, res) => {
 
 
 
-const PORT = api-to-manage-book-data.vercel.app
+const PORT = 3000
 
 app.listen(PORT, () => {
     console.log("Server is running on port", PORT);
