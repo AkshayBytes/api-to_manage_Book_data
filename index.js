@@ -7,8 +7,8 @@ const { json } = require("stream/consumers");
 const app = express();
 initializeDatabase();
 
-const jsonData = fs.readFileSync("books.json", "utf-8");
-const booksData = JSON.parse(jsonData)
+//const jsonData = fs.readFileSync("books.json", "utf-8");
+//const booksData = JSON.parse(jsonData)
 app.use(express.json());
 
 
