@@ -173,7 +173,7 @@ app.get("/books/publishedYear/:thepublishedYear", async(req, res) => {
             res.status(404).json({error: "Book not found."})
         }
     } catch (error) {
-        res.status(500).json({error: "Failed to fetchc Books", error})
+        res.status(500).json({error: "Failed to fetch Books", error})
     }
 })
 
