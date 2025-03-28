@@ -6,6 +6,15 @@ const { error } = require("console");
 const { json } = require("stream/consumers");
 const app = express();
 initializeDatabase();
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 
 //const jsonData = fs.readFileSync("books.json", "utf-8");
 //const booksData = JSON.parse(jsonData)
@@ -133,7 +142,7 @@ app.get("/books/:title", async(req, res) => {
 
 async function toGetBooksByAuther(theAuther) {
     try {
-        const booksByAuther = await Books.findOne({author: theAuther })
+        const booksByAuther = await Books.find({author: theAuther })
         return booksByAuther
     } catch (error) {
         console.log(error)
